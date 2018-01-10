@@ -1,5 +1,5 @@
 ---
-title: "Calculating Historical Capital-Capital Distances"
+title: "Calculating Historical Intercapital Distances"
 bibliography: ~/Dropbox/References/library.bib
 output:
   html_document:
