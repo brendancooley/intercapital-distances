@@ -1,0 +1,13 @@
+base
+readr
+dplyr
+tidyr
+ggplot2
+ggmap
+sp
+geosphere
+leaflet
+knitr
+bibtex
+knitcitations
+bindrcpp
