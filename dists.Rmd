@@ -15,7 +15,7 @@ Historical intercapital distance data proved difficult to find however. Most res
 
 It turns out that it's not too difficult to build intercapital distance data from scratch, however. All that is required is data on the *names* of capital cities for each state system member for every year between 1816 and the present. Paul Hensel's [ICOW Historical State Names dataset](http://www.paulhensel.org/icownames.html) provides this information. We can then use Google's [Geocoding API](https://developers.google.com/maps/documentation/geocoding/start) through the `ggmap` R package to get the coordinates of each historical capital, which can then be used to generate intercapital distance matrices. 
 
-Here, I show how to conduct this exercise in R. A clean version of Hensel's historical capital dataset is available [here](link to git repository). I've included all of the data and software necessary to generate this data on [Github](link to repository). Feel free to send along questions, comments, or suggestions for improvement to [bcooley@princeton.edu](mailto:bcooley@princeton.edu).
+Here, I show how to conduct this exercise in R. A clean version of Hensel's historical capital dataset is available [here](https://github.com/brendancooley/intercapital-distances/blob/master/capitals.csv). I've included all of the data and software necessary to generate this data on [Github](https://github.com/brendancooley/intercapital-distances). Feel free to send along questions, comments, or suggestions for improvement to [bcooley@princeton.edu](mailto:bcooley@princeton.edu).
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, cache=TRUE)
@@ -86,7 +86,7 @@ leaflet(data=dists) %>% addProviderTiles(providers$CartoDB.Positron, options=pro
   setMaxBounds(-180, -90, 180, 90)
 ```
 
-I then export the geocoded capitals as a csv. You can find these data [here](link).
+I then export the geocoded capitals as a csv. You can find these data [here](https://github.com/brendancooley/intercapital-distances/blob/master/dists.csv).
 
 ```{r export}
 write_csv(dists, 'dists.csv')
@@ -200,7 +200,7 @@ write_csv(cowWarsDyadic, 'cowWarsDist.csv')
 cowWarsDyadic %>% select(WarName, ccode1, State1, ccode2, State2, distance)
 ```
 
-The resulting data can be found [here](). 
+The resulting data can be found [here](https://github.com/brendancooley/intercapital-distances/blob/master/cowWarsDist.csv). 
 
 # R Packages
 
