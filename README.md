@@ -1,2 +1,3 @@
 # intercapital-distances
-R code for generating historical capital-to-capital distances (1816-present)
+
+See this note for details on how these data are constructed: http://brendancooley.com/notes/2018/dists/
