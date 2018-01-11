@@ -1,0 +1,22 @@
+---
+output:
+  html_document:
+    keep_md: TRUE
+    smart: false
+    self_contained: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r plot, echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+library(leaflet)
+
+dists <- read_csv('dists.csv')
+
+leaflet(data=dists) %>% addProviderTiles(providers$CartoDB.Positron, options=providerTileOptions(minZoom = 1)) %>%
+  addCircleMarkers(~lng, ~lat, popup=~Capital, radius=1) %>%
+  setMaxBounds(-180, -90, 180, 90)
+```
